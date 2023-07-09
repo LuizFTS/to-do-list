@@ -30,3 +30,5 @@
 
   <hr>
   <p>Thank you for checking out my to-do list project. I hope you find it useful!</p>
+  <p>You can check the page at <a href="https://todolist.luizfts.com" target="_blank">https://todolist.luizfts.com</a>.</p>
+
