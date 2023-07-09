@@ -1,0 +1,33 @@
+.contentcontainer {
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--gray-400);
+    border-radius: 8px;
+    min-height: calc(100vh - 20.875rem);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    overflow: hidden;
+    gap: 0.75rem;
+
+}
+
+.empty_board {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 4rem;
+}
+
+.empty_board img {
+    height: 3.5rem;
+    width: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+.empty_board strong, .empty_board p {
+    color: var(--gray-300);
+}
+
