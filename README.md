@@ -21,7 +21,7 @@
   <ol>
     <li>Clone the repository.</li>
     <li>Install the dependencies using <code>npm install</code>.</li>
-    <li>Start the development server with <code>npm start</code>.</li>
+    <li>Start the development server with <code>npm run dev</code>.</li>
     <li>Open the application in your browser at <code>http://localhost:5173</code>.</li>
   </ol>
 
