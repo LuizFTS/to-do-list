@@ -15,10 +15,7 @@ export interface Tasks {
 
 
 export function App() {
-  const [tasks, setTasks] = useState<Tasks[]>([
-    { id: "e6c91ff3-435a-4ef8-9175-d0169dbb3a15", name: "Estudar validação de formulários", status: false },
-    { id: "2bc460fa-0aef-4d21-bc55-8480eccb3c5b", name: "Criar dashboard dos resultados da empresa", status: true },
-  ])
+  const [tasks, setTasks] = useState<Tasks[]>([])
 
 
   const [newTask, setNewTask] = useState('')
@@ -31,6 +28,15 @@ export function App() {
     setTotalConcludedTasks(tasks.filter(item => item.status === true).length)
     setTotalTasks(tasks.length)
   }, [tasks])
+  useEffect(() => {
+    const local = localStorage.getItem('@to-do-list:tasks-1.0.0')
+
+    if (local) {
+      const recoveredTasks = JSON.parse(local) as Tasks[]
+      setTasks(recoveredTasks)
+    }
+
+  }, [])
 
 
   function handleAddNewTask(event: FormEvent) {
@@ -47,6 +53,7 @@ export function App() {
     }
 
     setTasks(prevState => {
+      localStorage.setItem('@to-do-list:tasks-1.0.0', JSON.stringify([...prevState, taskToAdd]))
       return [...prevState, taskToAdd]
     })
 
@@ -66,6 +73,7 @@ export function App() {
       }
       return task
     })
+    localStorage.setItem('@to-do-list:tasks-1.0.0', JSON.stringify(filteredTask))
 
     setTasks(filteredTask)
 
@@ -77,6 +85,7 @@ export function App() {
     setTasks(() => {
       return newList
     })
+    localStorage.setItem('@to-do-list:tasks-1.0.0', JSON.stringify(newList))
   }
 
 
